@@ -3,6 +3,7 @@ package com.terminus.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,9 @@ public class PhoneNumberController {
 	PhoneNumberRepository repo;
 
 	@GetMapping("/getAllPhoneNumbers")
+	@Cacheable(value = "phoneDetails", key = "#root.method")
 	public List<PhoneNumberEntity> getAllPhoneNumbers() {
+		System.out.println("in get all data");
 		return repo.findAll();
 	}
 
