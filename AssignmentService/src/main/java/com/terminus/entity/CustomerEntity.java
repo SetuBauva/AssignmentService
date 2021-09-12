@@ -8,26 +8,26 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * Entity Class representing PhoneNumbers table
+ * Entity Class representing Customer details table
  */
 @Entity
-@Table(name = "phone_number")
-public class PhoneNumberEntity {
+@Table(name = "customer_details")
+public class CustomerEntity {
 
 	@Id
 	@GeneratedValue
 	@JsonIgnore
-	private int phoneId;
+	private int id;
 	private int customerID;
 	private int phoneNumber;
 	private String status;
 
-	public int getPhoneId() {
-		return phoneId;
+	public int getId() {
+		return id;
 	}
 
-	public void setPhoneId(int phoneId) {
-		this.phoneId = phoneId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getCustomerID() {
@@ -56,19 +56,19 @@ public class PhoneNumberEntity {
 
 	@Override
 	public String toString() {
-		return "PhoneNumberEntity [phoneId=" + phoneId + ", customerID=" + customerID + ", phoneNumber=" + phoneNumber
+		return "PhoneNumberEntity [id=" + id + ", customerID=" + customerID + ", phoneNumber=" + phoneNumber
 				+ ", status=" + status + "]";
 	}
 
-	public PhoneNumberEntity(int phoneId, int customerID, int phoneNumber, String status) {
+	public CustomerEntity(int id, int customerID, int phoneNumber, String status) {
 		super();
-		this.phoneId = phoneId;
+		this.id = id;
 		this.customerID = customerID;
 		this.phoneNumber = phoneNumber;
 		this.status = status;
 	}
 
-	public PhoneNumberEntity() {
+	public CustomerEntity() {
 		super();
 	}
 

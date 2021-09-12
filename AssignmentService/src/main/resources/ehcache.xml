@@ -6,10 +6,9 @@
             overflowToDisk="false"
             timeToLiveSeconds="0" />
              
-    <cache name="phoneDetails"
+    <cache name="customerDetails"
             maxElementsInMemory="2000"
             eternal="false"
             overflowToDisk="false"
             timeToLiveSeconds="120" />                    
-            
 </ehcache>
